@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dairy Farm Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            background-color: #8B5E34;
+            background-image: url("images/image1.jpg.png");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #8B5E34; /* Set heading color */
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #8B5E34; /* Set label color */
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #8B5E34; /* Border color */
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent inputs */
+            color: #333333;
+        }
+
+        input::placeholder {
+            color: #666666; /* Placeholder color */
+        }
+
+        .btn-primary {
+            background-color: #8B5E34;
+            color: #f3f3f3;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #D8C3B5; /* Hover color */
+        }
+
+        .extra-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .extra-links a {
+            text-decoration: none;
+            color: #8B5E34; /* Link color */
+            font-size: 14px;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="index.html" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username">
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+        
+        <button type="submit" class="btn-primary">Login</button>
+    </form>
+    
+    <div class="extra-links">
+        <p>Don't have an account? <a href="register.html">Sign up</a></p>
+    </div>
+</div>
+
+</body>
+</html>

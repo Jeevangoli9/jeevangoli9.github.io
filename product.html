@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#EAE7DC;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .navbar ul li {
+            display: inline;
+            padding: 0 15px;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .product-category {
+            margin-bottom: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #8B5E34;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: calc(30% - 20px);
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .product-item h3 {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .product-item p {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .quantity button {
+            border: none;
+            background-color: #8B5E34;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .quantity input {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+        }
+        hr {
+            border: 1px solid #ccc;
+            margin: 40px 0;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Ko-Matha Dairy Farm</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stories.html">Our Stories</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1 style="text-align: center;">All Dairy Products</h1>
+
+    <!-- Milk Section -->
+    <div class="product-category">
+        <h2>Milk</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="images/gold.jpg" alt="Gold Milk">
+                <h3>Gold Milk</h3>
+                <p>500ml: ₹40<br>1L: ₹80</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/supergold.jpeg" alt="Super Gold Milk">
+                <h3>Super Gold Milk</h3>
+                <p>500ml: ₹45<br>1L: ₹90</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/buffalo.jpg" alt="Buffalo Milk">
+                <h3>Buffalo Milk</h3>
+                <p>500ml: ₹30<br>1L: ₹60</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/toned.jpg" alt="Toned Milk">
+                <h3>Toned Milk</h3>
+                <p>500ml: ₹22<br>1L: ₹44</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/fullcream.jpg" alt="Full Cream Milk">
+                <h3>Full Cream Milk</h3>
+                <p>500ml: ₹32<br>1L: ₹64</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/standardized.jpg" alt="Standardized Milk">
+                <h3>Standardized Milk</h3>
+                <p>500ml: ₹26<br>1L: ₹52</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/doubletoned.jpg" alt="Double Toned Milk">
+                <h3>Double Toned Milk</h3>
+                <p>500ml: ₹20<br>1L: ₹40</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/cow.jpg" alt="Cow Milk">
+                <h3>Cow Milk</h3>
+                <p>500ml: ₹25<br>1L: ₹50</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/a2fullcream.jpg" alt="A2 Full Cream Milk">
+                <h3>A2 Full Cream Milk</h3>
+                <p>500ml: ₹35<br>1L: ₹70</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Butter Section -->
+    <div class="product-category">
+        <h2>Butter</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="images/salted.jpg" alt="Salted Butter">
+                <h3>Salted Butter</h3>
+                <p>100g: ₹50<br>200g: ₹90</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/unsalted.jpg" alt="Unsalted Butter">
+                <h3>Unsalted Butter</h3>
+                <p>100g: ₹55<br>200g: ₹100</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/herb.jpg" alt="Herb Butter">
+                <h3>Herb Butter</h3>
+                <p>100g: ₹70<br>200g: ₹130</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Cheese Section -->
+    <div class="product-category">
+        <h2>Cheese</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="images/cheddar.jpeg" alt="Cheddar Cheese">
+                <h3>Cheddar Cheese</h3>
+                <p>200g: ₹120<br>500g: ₹280</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/mozarella.jpg" alt="Mozzarella Cheese">
+                <h3>Mozzarella Cheese</h3>
+                <p>200g: ₹150<br>500g: ₹350</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/feta.jpeg" alt="Feta Cheese">
+                <h3>Feta Cheese</h3>
+                <p>200g: ₹160<br>500g: ₹370</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Yogurt Section -->
+    <div class="product-category">
+        <h2>Yogurt</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="images/plain.jpg" alt="Plain Yogurt">
+                <h3>Plain Yogurt</h3>
+                <p>500g: ₹40<br>1kg: ₹75</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/greek.jpg" alt="Greek Yogurt">
+                <h3>Greek Yogurt</h3>
+                <p>500g: ₹60<br>1kg: ₹110</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="images/fruit.jpg" alt="Fruit Yogurt">
+                <h3>Fruit Yogurt</h3>
+                <p>500g: ₹50<br>1kg: ₹90</p>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="0" min="0">
+                    <button>+</button>
+                </div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Lassi Section -->
+<!-- Lassi Section -->
+<div class="product-category">
+    <h2>Lassi</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="images/sweet.jpg" alt="Sweet Lassi">
+            <h3>Sweet Lassi</h3>
+            <p>200ml: ₹30<br>500ml: ₹70</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/salt.jpeg" alt="Salted Lassi">
+            <h3>Salted Lassi</h3>
+            <p>200ml: ₹30<br>500ml: ₹70</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/mango.jpeg" alt="Mango Lassi">
+            <h3>Mango Lassi</h3>
+            <p>200ml: ₹35<br>500ml: ₹75</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Ice Cream Section -->
+<div class="product-category">
+    <h2>Ice Cream</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="images/vanilla.jpg" alt="Vanilla Ice Cream">
+            <h3>Vanilla Ice Cream</h3>
+            <p>500ml: ₹150<br>1L: ₹300</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/chocolate.jpg" alt="Chocolate Ice Cream">
+            <h3>Chocolate Ice Cream</h3>
+            <p>500ml: ₹160<br>1L: ₹320</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/strawberry.jpeg" alt="Strawberry Ice Cream">
+            <h3>Strawberry Ice Cream</h3>
+            <p>500ml: ₹170<br>1L: ₹340</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Sweets Section -->
+<div class="product-category">
+    <h2>Sweets</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="images/gulabjamun.jpg" alt="Gulab Jamun">
+            <h3>Gulab Jamun</h3>
+            <p>500g: ₹200</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/rasgulla.jpg" alt="Rasgulla">
+            <h3>Rasgulla</h3>
+            <p>500g: ₹180</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/kalakand.jpg" alt="Kalakand">
+            <h3>Kalakand</h3>
+            <p>500g: ₹220</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Paneer Section -->
+<div class="product-category">
+    <h2>Paneer</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="images/malai.jpg" alt="Malai Paneer">
+            <h3>Malai Paneer</h3>
+            <p>200g: ₹60<br>500g: ₹140</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/organic.jpg" alt="Organic Paneer">
+            <h3>Organic Paneer</h3>
+            <p>200g: ₹70<br>500g: ₹160</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/tifu.jpg" alt="Tofu">
+            <h3>Tofu</h3>
+            <p>200g: ₹50<br>500g: ₹120</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Cream Section -->
+<div class="product-category">
+    <h2>Cream</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="images/freshcream.jpg" alt="Fresh Cream">
+            <h3>Fresh Cream</h3>
+            <p>200g: ₹60<br>500g: ₹130</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/whipping.jpg" alt="Whipping Cream">
+            <h3>Whipping Cream</h3>
+            <p>200g: ₹80<br>500g: ₹150</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/lowfat.jpg" alt="Low-Fat Cream">
+            <h3>Low-Fat Cream</h3>
+            <p>200g: ₹60<br>500g: ₹110</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Milkshake Section -->
+<div class="product-category">
+    <h2>Milkshake</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="images/chocolatemilkshake.jpg" alt="Chocolate Milkshake">
+            <h3>Chocolate Milkshake</h3>
+            <p>250ml: ₹50<br>500ml: ₹90</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/vanillamilkshake.jpg" alt="Vanilla Milkshake">
+            <h3>Vanilla Milkshake</h3>
+            <p>250ml: ₹50<br>500ml: ₹90</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="images/strawberrymilkshake.jpg" alt="Strawberry Milkshake">
+            <h3>Strawberry Milkshake</h3>
+            <p>250ml: ₹55<br>500ml: ₹100</p>
+            <div class="quantity">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <input type="number" value="0" min="0" readonly>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<script>
+    function updateQuantity(button, change) {
+        const input = button.parentElement.querySelector('input');
+        let quantity = parseInt(input.value);
+        quantity += change;
+        if (quantity < 0) quantity = 0; // Prevent negative values
+        input.value = quantity;
+    }
+
+    function addToCart(button) {
+        const productName = button.parentElement.querySelector('h3').innerText;
+        const quantity = button.parentElement.querySelector('input').value;
+        if (quantity > 0) {
+            alert(`${quantity} ${productName}(s) added to cart successfully!`);
+        } else {
+            alert('Please select a quantity before adding to cart.');
+        }
+    }
+</script>
+
+
+    <footer>
+        <p>&copy; 2024 Ko-Matha Dairy Farm. All rights reserved.</p>
+    </footer>
+</body>
+</html>

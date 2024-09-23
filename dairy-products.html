@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Dairy Products - Ko-Matha Dairy Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* All Dairy Products Section */
+.all-dairy-products {
+    padding: 50px;
+    background-color: #EAE7DC;
+    text-align: center;
+}
+
+.all-dairy-products h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.dairy-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.product p {
+    color: #555;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Ko-Matha Dairy Farm</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stories.html">Our Stories</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- All Dairy Products Section -->
+    <section class="all-dairy-products">
+        <h2>Explore Our Dairy Products</h2>
+        <div class="dairy-products-grid">
+            <div class="product">
+                <img src="images/milk.jpg" alt="Fresh Milk">
+                <h3>Fresh Milk</h3>
+                <p>Available in 1L and 500mL bottles.</p>
+            </div>
+            <div class="product">
+                <img src="images/cheese.jpg" alt="Organic Cheese">
+                <h3>Organic Cheese</h3>
+                <p>Made from organic cow milk.</p>
+            </div>
+            <div class="product">
+                <img src="images/yogurt.jpg" alt="Creamy Yogurt">
+                <h3>Creamy Yogurt</h3>
+                <p>Available in 250g and 500g tubs.</p>
+            </div>
+            <!-- Add more products as needed -->
+            <div class="product">
+                <img src="images/butter.jpg" alt="Fresh Butter">
+                <h3>Fresh Butter</h3>
+                <p>Freshly churned butter from our dairy farm.</p>
+            </div>
+            <div class="product">
+                <img src="images/ghee.jpg" alt="Pure Ghee">
+                <h3>Pure Ghee</h3>
+                <p>Rich and aromatic ghee, perfect for cooking.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ko-Matha Dairy Farm. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

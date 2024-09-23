@@ -1,0 +1,71 @@
+Here's a simple response for the cart system with dynamic quantity adjustment:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart System</title>
+  <style>
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .cart-total {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+
+  <div class="cart-item" data-id="1">
+    <span>Product 1</span>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <span class="price">$10</span>
+    <button class="remove">Remove</button>
+  </div>
+
+  <div class="cart-item" data-id="2">
+    <span>Product 2</span>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <span class="price">$20</span>
+    <button class="remove">Remove</button>
+  </div>
+
+  <h2 class="cart-total">Total: $30</h2>
+
+  <script>
+    const cartItems = document.querySelectorAll('.cart-item');
+    const totalDisplay = document.querySelector('.cart-total');
+
+    function updateTotal() {
+      let total = 0;
+      cartItems.forEach(item => {
+        const quantity = item.querySelector('.quantity').value;
+        const price = item.querySelector('.price').textContent.replace('$', '');
+        total += quantity * price;
+      });
+      totalDisplay.textContent = `Total: $${total}`;
+    }
+
+    cartItems.forEach(item => {
+      const quantityInput = item.querySelector('.quantity');
+      const removeButton = item.querySelector('.remove');
+
+      quantityInput.addEventListener('input', updateTotal);
+      removeButton.addEventListener('click', () => {
+        item.remove();
+        updateTotal();
+      });
+    });
+  </script>
+</body>
+</html>
+```
+
+This simple cart system allows users to adjust the quantity of products and see the total update in real time. The "Remove" button lets users delete items from the cart.
+
+You can expand this by storing the cart in `localStorage`, using APIs to store the cart in a database, or adding additional products dynamically. Let me know if you'd like help with that!

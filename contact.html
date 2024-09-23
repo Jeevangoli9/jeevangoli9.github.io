@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ko-Matha Dairy Farm</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .navbar ul li {
+            display: inline;
+            padding: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        section.contact-section {
+            padding: 50px;
+            background-color: #EAE7DC;
+            text-align: center;
+        }
+
+        section h2, section h3 {
+            color: #333;
+        }
+
+        .contact-info {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .get-in-touch {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .get-in-touch h3 {
+            margin-bottom: 15px;
+        }
+
+        .get-in-touch input, .get-in-touch textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .get-in-touch button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+        }
+
+        .get-in-touch button:hover {
+            background-color: darkgreen;
+        }
+
+        .message {
+            color: green;
+            font-weight: bold;
+            display: none;
+            margin-top: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info {
+                padding: 20px;
+            }
+            .get-in-touch {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <h1>Ko-Matha Dairy Farm</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stories.html">Our Stories</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <h3>Ko-Matha Dairy Farm</h3>
+            <p><strong>Address:</strong> Thandalam, Chennai, Tamil Nadu, Pin Code:602117</p>
+            <p><strong>Phone:</strong> +1 (837) 567-8901</p>
+            <p><strong>Email:</strong> info@komathadairyfarm.com</p>
+            <p><strong>Fax:</strong> +1 (837) 567-8902</p>
+            <p><strong>Customer Care:</strong> support@komathadairyfarm.com</p>
+        </div>
+
+        <div class="get-in-touch">
+            <h3>Any Queries/Suggestions</h3>
+            <form id="contactForm" action="" method ="post">
+                <input type="text" id="name" placeholder="Name" required><br>
+                <input type="email" id="email" placeholder="E-mail" required><br>
+                <input type="text" id="mobile" placeholder="Mobile Number" required><br>
+                <input type="text" id="subject" placeholder="Subject" required><br>
+                <textarea id="message" placeholder="Message" required></textarea><br>
+                <button type="submit">SUBMIT</button>
+            </form>
+            <div id="submitMessage" class="message">Submitted successfully!</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ko-Matha Dairy Farm. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('submitMessage').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Farm Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .total-price {
+            font-size: 1.5em;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+   <script>
+    window.onload = function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        let total = 0;
+        const productList = document.getElementById('productList');
+
+        for (const product in cart) {
+            const quantity = cart[product];
+            const price = getPrice(product);
+            total += price * quantity;
+
+            const itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `${product} - ₹${price} x ${quantity} = ₹${price * quantity}`;
+            productList.appendChild(itemDiv);
+        }
+        document.getElementById('totalPrice').innerText = `Total Price: ₹${total}`;
+    };
+
+    function getPrice(productName) {
+        const prices = {
+            'Gold Milk': 40,
+            'Super Gold Milk': 45,
+            'Buffalo Milk': 30,
+        };
+        return prices[productName] || 0;
+    }
+
+    function handlePayment() {
+        alert('Payment successful!');
+        localStorage.removeItem('cart'); // Clear cart after payment
+        window.location.href = 'products.html'; // Redirect to products page
+    }
+</script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Dairy Farm Products</h1>
+    <form id="productForm" onsubmit="handleSubmit(event)">
+        <div id="productList"></div>
+        <div class="total-price" id="totalPrice">Total Price: ₹0</div>
+        <button type="submit">Place Order</button>
+    </form>
+</div>
+
+</body>
+</html>
